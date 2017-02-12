@@ -31,7 +31,6 @@ router.route('/')
 		description: req.body.description
 	 })
 	.then(function(gallery) {
-		console.log('reqBody', req.body);
 		res.redirect('gallery');
 	});
 });
@@ -41,7 +40,7 @@ router.route('/:id')
 	.get((req, res) => {
 		models.Gallery.findById(req.params.id)
 		.then(function (gallery) {
-			res.json(gallery);
+			res.render('gallery/view', {galleryView: gallery});
 	});
 })
 .put((req, res) => {
@@ -67,7 +66,7 @@ router.route('/:id')
 			id: req.params.id
 		}
 	}).then(function (gallery) {
-		res.json(gallery);
+		res.redirect('/gallery');
 	});
 });
 
