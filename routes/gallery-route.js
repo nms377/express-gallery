@@ -6,13 +6,22 @@ const models = require('../models');
 const app = express();
 const router = express.Router();
 
+//	New Photo Form
+router.route('/new')
+	.get((req, res) => {
+		models.Gallery.findAll()
+		.then(function(gallery) {
+			res.render('/gallery/new');
+		});
+	});
+
 //	Gallery Index
 router.route('/')
 	.get((req, res) => {
 		models.Gallery.findAll()
 			.then(function (gallery) {
 				// res.send('sanity');
-				res.json(gallery);
+				res.render('gallery/index', {galleryIndex: gallery});
 			});
 })
 	.post((req, res) => {
