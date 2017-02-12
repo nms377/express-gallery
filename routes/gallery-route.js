@@ -11,7 +11,7 @@ router.route('/new')
 	.get((req, res) => {
 		models.Gallery.findAll()
 		.then(function(gallery) {
-			res.render('/gallery/new');
+			res.render('gallery/new');
 		});
 	});
 
@@ -42,11 +42,32 @@ router.route('/:id')
 		models.Gallery.findById(req.params.id)
 		.then(function (gallery) {
 			res.json(gallery);
-	})
-		.catch( err => {
-			console.log('err', err);
-			res.send('nada');
-		});
+	});
+})
+.put((req, res) => {
+	models.Gallery.find({
+		where: {
+			id: req.params.id
+		}
+	}).then( function (gallery) {
+		if (gallery) {
+			gallery.updateAttributes({
+				author: req.body.author,
+				link: encodeURI(req.body.link),
+				description: req.body.description
+			}).then( function (gallery) {
+				res.json(gallery);
+			});
+		}
+	});
 });
+
+router.route('/:id/edit')
+	.get((req,res) => {
+		models.Gallery.findById(req.params.id)
+		.then(function (gallery) {
+			res.json(gallery);
+		});
+	});
 
 module.exports = router;
