@@ -60,6 +60,15 @@ router.route('/:id')
 			});
 		}
 	});
+})
+.delete((req, res) => {
+	models.Gallery.destroy({
+		where: {
+			id: req.params.id
+		}
+	}).then(function (gallery) {
+		res.json(gallery);
+	});
 });
 
 router.route('/:id/edit')
