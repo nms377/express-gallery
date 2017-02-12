@@ -32,7 +32,7 @@ router.route('/')
 	 })
 	.then(function(gallery) {
 		console.log('reqBody', req.body);
-		res.json(gallery);
+		res.redirect('gallery');
 	});
 });
 
