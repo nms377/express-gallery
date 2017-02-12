@@ -55,7 +55,7 @@ router.route('/:id')
 				link: encodeURI(req.body.link),
 				description: req.body.description
 			}).then( function (gallery) {
-				res.json(gallery);
+				res.redirect('gallery'); //	wtf goes here?
 			});
 		}
 	});
@@ -74,7 +74,7 @@ router.route('/:id/edit')
 	.get((req,res) => {
 		models.Gallery.findById(req.params.id)
 		.then(function (gallery) {
-			res.json(gallery);
+			res.render('gallery/edit', {galleryEdit: gallery});
 		});
 	});
 
