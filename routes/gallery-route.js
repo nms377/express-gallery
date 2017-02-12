@@ -22,16 +22,22 @@ router.route('/')
 		description: req.body.description
 	 })
 	.then(function(gallery) {
+		console.log('reqBody', req.body);
 		res.json(gallery);
 	});
 });
 
 //	Gallery Index By id
-// app.get('/gallery/:id', (req, res) => {
-// 	Gallery.findById()
-// 	.then(function (gallery) {
-// 		res.json(gallery);
-// 	});
-// });
+router.route('/:id')
+	.get((req, res) => {
+		models.Gallery.findById(req.params.id)
+		.then(function (gallery) {
+			res.json(gallery);
+	})
+		.catch( err => {
+			console.log('err', err);
+			res.send('nada');
+		});
+});
 
 module.exports = router;
