@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
 		author: DataTypes.STRING,
 		link: DataTypes.STRING,
 		description: DataTypes.STRING
-	}, {
+	},{
 		classMethods: {
 			associate: function(models) {
 				Gallery.belongsTo(models.User);
