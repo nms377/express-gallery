@@ -1,4 +1,6 @@
-<h1>Gallery</h1>
+<h1>_ARCHITEKT</h1>
+
+<p>Welcome to our online portfolio, we are a small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme.</p>
 
 <form action="http://localhost:3000/gallery/new" method="GET" enctype="application/x-www-form-urlencoded">
 	<button>Add Image</button>
@@ -8,18 +10,18 @@
 
 <div class="galleryIndex">
 
-	<img src=" {{ link }}" height="400" width="auto" />
+	<form class="imageBtns" action="http://localhost:3000/gallery/{{id}}" method="GET" enctype="application/x-www-form-urlencoded">
 	
-	<p>Author: {{ author}}</p>
+		<button><img class="indexImages" src=" {{ link }}" height="400" width="auto" /></button>
 
-	<p>Description: {{ description }} </p>
+	</form>
+	
+	<p>{{ author}}</p>
+
+	<p>{{ link }} </p>
 
 </div>
 
-<form action="http://localhost:3000/gallery/{{id}}" method="GET" enctype="application/x-www-form-urlencoded">
-	
-	<button type="submit">View Image</button>
 
-</form>
 
 {{/each}}
