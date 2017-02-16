@@ -15,6 +15,7 @@ app.set('view engine', 'hbs');
 
 //	body-parser
 app.use( bp.urlencoded({extended: true}));
+app.use( bp.text( { type: 'text/html'}));
 
 //	method-override
 app.use(methodOverride('_method'));
