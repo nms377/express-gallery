@@ -12,6 +12,10 @@ router.route('/new')
 		models.Gallery.findAll()
 		.then(function(gallery) {
 			res.render('gallery/new');
+		})
+		.catch( err => {
+			console.log(err);
+			res.send('Something went wrong');
 		});
 	});
 
