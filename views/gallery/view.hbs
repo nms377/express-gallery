@@ -4,9 +4,9 @@
 
 <div class="galleryView">
 	
-	<p>Author: {{ galleryView.author}}</p>
+	<img src="{{ galleryView.link }}" height="400" width="auto" />
 
-	<p>Link: {{ galleryView.link }} </p>
+	<p>Author: {{ galleryView.author}}</p>
 
 	<p>Description: {{ galleryView.description }} </p>
 
@@ -20,7 +20,7 @@
 
 </form>
 
-<form action="http://localhost:3000/gallery?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
+<form action="http://localhost:3000/gallery/{{galleryView.id}}?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
 	
 	<button type="submit">Delete</button>
 
