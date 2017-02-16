@@ -52,10 +52,10 @@ router.route('/:id')
 		if (gallery) {
 			gallery.updateAttributes({
 				author: req.body.author,
-				link: encodeURI(req.body.link),
+				link: req.body.link,
 				description: req.body.description
 			}).then( function (gallery) {
-				res.redirect(`/gallery/${req.params.id}/edit`);
+				res.redirect(`/gallery/${req.params.id}`);
 			});
 		}
 	});
