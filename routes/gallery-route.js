@@ -27,7 +27,7 @@ router.route('/')
 	.post((req, res) => {
 		models.Gallery.create({ 
 		author: req.body.author,
-		link: encodeURI(req.body.link),
+		link: req.body.link,
 		description: req.body.description
 	 })
 	.then(function(gallery) {
@@ -55,7 +55,7 @@ router.route('/:id')
 				link: encodeURI(req.body.link),
 				description: req.body.description
 			}).then( function (gallery) {
-				res.redirect('gallery'); //	wtf goes here?
+				res.redirect(`/gallery/${req.params.id}/edit`);
 			});
 		}
 	});
