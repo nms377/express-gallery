@@ -33,19 +33,3 @@
 	<button type="submit">Return to Gallery</button>
 
 </form>
-
-{{#each galleryView}}
-	
-	<div class="galleryView">
-	
-	<p>{{ galleryView.author}}</p>
-
-	<p> {{ galleryView.link }} </p>
-	
-	<img src="{{ galleryView.link }}" height="400" width="auto" />
-
-	<p>{{ galleryView.description }} </p>
-
-	</div>
-
-{{/each}}
