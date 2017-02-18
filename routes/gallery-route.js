@@ -22,7 +22,7 @@ router.route('/new')
 //	Gallery Index
 router.route('/')
 	.get((req, res) => {
-		models.Gallery.findAll()
+		models.Gallery.findAll({order: 'id ASC'})
 			.then(function (gallery) {
 				res.render('gallery/index', {galleryIndex: gallery});
 			});
