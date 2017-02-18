@@ -1,28 +1,26 @@
-<h1>Image</h1>
+{{> header }}
 
-{{#if galleryView}}
+{{#with galleryView}}
 
 <div class="galleryView">
 	
-	<p>{{ galleryView.author}}</p>
+	<p>{{ author }}</p>
 
-	<p> {{ galleryView.link }} </p>
+	<p> {{ link }} </p>
 	
-	<img src="{{ galleryView.link }}" height="400" width="auto" />
+	<img src="{{ link }}" height="400" width="auto" />
 
-	<p>{{ galleryView.description }} </p>
+	<p>{{ description }} </p>
 
 </div>
 
-{{/if}}
-
-<form action="http://localhost:3000/gallery/{{galleryView.id}}/edit" method="get" enctype="application/x-www-form-urlencoded">
+<form action="http://localhost:3000/gallery/{{id}}/edit" method="get" enctype="application/x-www-form-urlencoded">
 	
 	<button type="submit">Edit</button>
 
 </form>
 
-<form action="http://localhost:3000/gallery/{{galleryView.id}}?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
+<form action="http://localhost:3000/gallery/{{id}}?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
 	
 	<button type="submit">Delete</button>
 
@@ -33,3 +31,5 @@
 	<button type="submit">Return to Gallery</button>
 
 </form>
+
+{{/with}}
