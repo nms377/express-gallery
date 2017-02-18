@@ -24,7 +24,6 @@ router.route('/')
 	.get((req, res) => {
 		models.Gallery.findAll()
 			.then(function (gallery) {
-				// res.send('sanity');
 				res.render('gallery/index', {galleryIndex: gallery});
 			});
 })
