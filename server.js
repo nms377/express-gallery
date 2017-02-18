@@ -39,8 +39,7 @@ const user = require('./routes/user-route');
 
 //	models
 const db = require('./models');
-const { User } = db;	//	object destructuring
-const { Gallery } = db;
+const { User, Gallery } = db;	//	object destructuring
 
 //	route
 app.use('/gallery', gallery );
