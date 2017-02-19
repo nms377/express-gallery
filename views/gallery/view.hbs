@@ -1,5 +1,6 @@
 {{> header }}
 
+
 {{#with galleryView}}
 
 <div class="galleryView">
@@ -11,8 +12,6 @@
 	<img src="{{ link }}" height="400" width="auto" />
 
 	<p>{{ description }} </p>
-
-</div>
 
 <form action="http://localhost:3000/gallery/{{id}}/edit" method="get" enctype="application/x-www-form-urlencoded">
 	
@@ -31,5 +30,7 @@
 	<button type="submit">Return to Gallery</button>
 
 </form>
+
+</div>
 
 {{/with}}
