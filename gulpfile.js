@@ -1,21 +1,21 @@
 const gulp = require('gulp');
 const scss = require('gulp-sass');
-const browserSync = require('browser-sync').create();
+// const browserSync = require('browser-sync').create();
 
 //	Compile sass
 gulp.task('scss', () => {
 	return gulp.src('./scss/*.scss')
-	.pipe(scss({ errLogToConsole: true }))
+	.pipe(scss())
 	.pipe(gulp.dest('./public/css'))
 })
 
-gulp.task('browserSync', () => {
-	return browserSync.init(['./public'], {
-		server: {
-			baseDir: './public'
-		}
-	})
-})
+// gulp.task('browserSync', () => {
+// 	return browserSync.init(['./public'], {
+// 		server: {
+// 			baseDir: './public'
+// 		}
+// 	})
+// })
 
 //	watch files for changes
 gulp.task('watch', () => {
@@ -23,4 +23,4 @@ gulp.task('watch', () => {
 })
 
 //	default task
-gulp.task('default', ['scss', 'watch'])
+gulp.task('default', ['watch'])
