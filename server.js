@@ -12,6 +12,7 @@ const hbs = handlebars.create({
 const CONFIG = require('./config/config.json');
 const	LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
 const passport = require('passport');
 
 //	setup handlebars
@@ -22,11 +23,15 @@ app.use(express.static('public'));
 //	body-parser
 app.use( bp.urlencoded({extended: true}));
 
+//  cookie parser
+// app.use(express.cookieParser());
+
 //	method-override
 app.use(methodOverride('_method'));
 
 //	express-session
 app.use(session({
+  store: new RedisStore(),
 	secret: CONFIG.SESSION_SECRET
 }));
 
@@ -42,7 +47,7 @@ const user = require('./routes/user-route');
 const db = require('./models');
 const { User, Gallery } = db;	//	object destructuring
 
-//	route
+//	routes
 app.use('/gallery', gallery );
 app.use('/user', user );
 
@@ -57,15 +62,19 @@ const authenticate = (username, password) => {
 };
 
 passport.use(new LocalStrategy(
-  function (username, password, done) {
+  function (username, password, done, err) {
     console.log('username, password: ', username, password);
+
+    if (err) { return done(err); }
+
     // check if the user is authenticated or not
     if( authenticate(username, password) ) {
     	console.log('passed');
+      console.log('username', username);
 
       // User data from the DB
       const user = {
-        name: 'Joe',
+        name: username,
         role: 'admin',
         favColor: 'green',
         isAdmin: true,
@@ -73,7 +82,7 @@ passport.use(new LocalStrategy(
 
       return done(null, user); // no error, and data = user
     }
-    return done(null, false); // error and authenticted = false
+    return done(null, false, { message: 'Login failed.'}); // error and authenticted = false
   }
 ));
 
