@@ -9,7 +9,6 @@ const hbs = handlebars.create({
 });
 
 //	password middleware for User
-const CONFIG = require('./config/config.json');
 const	LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
@@ -32,7 +31,7 @@ app.use(methodOverride('_method'));
 //	express-session
 app.use(session({
   store: new RedisStore(),
-	secret: CONFIG.SESSION_SECRET
+	secret: 'session'
 }));
 
 //	this goes after every other middleware
@@ -51,40 +50,23 @@ const { User, Gallery } = db;	//	object destructuring
 app.use('/gallery', gallery );
 app.use('/user', user );
 
-//	authenticate password
 const authenticate = (username, password) => {
-  // get user data from the DB
-  const { USERNAME } = CONFIG;
-  const { PASSWORD } = CONFIG;
-
- // check if the user is authenticated or not
-  return ( username === USERNAME && password === PASSWORD );
+  return User.findOne({where: { username: username, password: password}});
 };
 
+//	authenticate password
 passport.use(new LocalStrategy(
   function (username, password, done, err) {
-    console.log('username, password: ', username, password);
 
-    if (err) { return done(err); }
-
-    // check if the user is authenticated or not
-    if( authenticate(username, password) ) {
-    	console.log('passed');
-      console.log('username', username);
-
-      // User data from the DB
-      const user = {
-        name: username,
-        role: 'admin',
-        favColor: 'green',
-        isAdmin: true,
-      };
-
-      return done(null, user); // no error, and data = user
-    }
-    return done(null, false, { message: 'Login failed.'}); // error and authenticted = false
-  }
-));
+  authenticate(username, password)
+    .then( function (username) { 
+      return done(null, username); // no error, and data = username
+     })
+    .catch( err => {
+      console.log(err);
+      return done(null, false);  
+  });
+}));
 
 //	serialize user
 passport.serializeUser(function(user, done) {
