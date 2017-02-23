@@ -14,17 +14,29 @@ const router = express.Router();
 router.route('/create_user')
 	.get((req, res) => {
 		res.render('user/create_user');
-	});
+	})
+	.post((req, res) => {
+		console.log(req.body.username);
+		console.log(req.body.password);
+		console.log(req.body.favcolor);
+		models.User.create({
+			username: req.body.username,
+			password: req.body.password,
+			favcolor: req.body.favcolor
+		})
+		.then(function(user) {
+			res.redirect('login');
+		});
+});
 
 	// User Login
 router.route('/login')
 	.get((req, res) => {
-				res.render('user/login');
+		res.render('user/login');
 })
 	.post(passport.authenticate('local', {
 		successRedirect: 'secret',
 		failureRedirect: 'login'
-
 }));
 
 function isAuthenticated(req, res, next) {
@@ -39,6 +51,20 @@ function isAuthenticated(req, res, next) {
 router.route('/secret', isAuthenticated)
 	.get((req, res) => {
 		res.render('user/secret');
+	});
+
+function logout(req, res, next){
+	if (req.logout()) {
+		next('/login');
+	}else{
+		console.log('NOPE');
+		res.redirect('/secret');
+	}
+}
+
+router.route('/logout', logout)
+	.get((req, res) => {
+		res.redirect('/login');
 	});
 
 module.exports = router;
