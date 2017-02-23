@@ -17,6 +17,7 @@ const passport = require('passport');
 //	setup handlebars
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
+app.use(express.static('public'));
 
 //	body-parser
 app.use( bp.urlencoded({extended: true}));
