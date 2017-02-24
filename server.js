@@ -13,6 +13,8 @@ const	LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 const passport = require('passport');
+const psLogout = require('express-passport-logout');
+const cookieParser = require('cookie-parser');
 
 //	setup handlebars
 app.engine('hbs', hbs.engine);
@@ -23,7 +25,7 @@ app.use(express.static('public'));
 app.use( bp.urlencoded({extended: true}));
 
 //  cookie parser
-// app.use(express.cookieParser());
+app.use(cookieParser());
 
 //	method-override
 app.use(methodOverride('_method'));
@@ -75,7 +77,19 @@ passport.serializeUser(function(user, done) {
 
 //	deserialize user
 passport.deserializeUser(function(user, done) {
-	return done(null, user);
+
+  console.log('user', user);
+
+  User.findOne({where: { username: user.username} })
+    .then( function(username) {
+      return done(null, user);
+    })
+    .catch( err=> {
+      console.log('deserialize err', err);
+      return done(err, user);
+    });
+
+  // return done(null, user);
 });
 
 //	listening on port
