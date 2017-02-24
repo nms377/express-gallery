@@ -35,36 +35,23 @@ router.route('/login')
 		res.render('user/login');
 })
 	.post(passport.authenticate('local', {
-		successRedirect: 'secret',
-		failureRedirect: 'login'
+		successRedirect: '/user/secret',
+		failureRedirect: '/user/login'
 }));
 
 function isAuthenticated(req, res, next) {
+	console.log('running is authenticated');
 	if (req.isAuthenticated()) {
+		console.log('passed');
 		next();
 	}else{
 		console.log('NOPE');
-		res.redirect('/login');
+		res.redirect('login');
 	}
 }
 
-router.route('/secret', isAuthenticated)
-	.get((req, res) => {
+router.get('/secret', isAuthenticated, (req, res) => {
 		res.render('user/secret');
-	});
-
-function logout(req, res, next){
-	if (req.logout()) {
-		next('/login');
-	}else{
-		console.log('NOPE');
-		res.redirect('/secret');
-	}
-}
-
-router.route('/logout', logout)
-	.get((req, res) => {
-		res.redirect('/login');
 	});
 
 module.exports = router;
