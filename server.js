@@ -65,7 +65,7 @@ passport.use(new LocalStrategy(
       return done(null, username); // no error, and data = username
      })
     .catch( err => {
-      console.log(err);
+      console.log('passport.use, authenticate', err);
       return done(null, false);  
   });
 }));
@@ -78,8 +78,6 @@ passport.serializeUser(function(user, done) {
 //	deserialize user
 passport.deserializeUser(function(user, done) {
 
-  console.log('user', user);
-
   User.findOne({where: { username: user.username} })
     .then( function(username) {
       return done(null, user);
@@ -89,7 +87,6 @@ passport.deserializeUser(function(user, done) {
       return done(err, user);
     });
 
-  // return done(null, user);
 });
 
 //	listening on port
