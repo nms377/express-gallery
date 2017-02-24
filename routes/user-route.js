@@ -52,7 +52,7 @@ function isAuthenticated(req, res, next) {
 
 router.get('/secret', isAuthenticated, (req, res) => {
 		console.log('secret', req.user);
-		res.render('user/secret');
+		res.render('user/secret', {user: req.user.username});
 	});
 
 router.get('/logout', function( req, res) {
