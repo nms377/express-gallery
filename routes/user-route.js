@@ -51,10 +51,12 @@ function isAuthenticated(req, res, next) {
 }
 
 router.get('/secret', isAuthenticated, (req, res) => {
+		console.log('secret', req.user);
 		res.render('user/secret');
 	});
 
 router.get('/logout', function( req, res) {
+	console.log(req.user.username,'successfully logged out');
 	req.logout();
 	res.redirect('login');
 });
