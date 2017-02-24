@@ -72,7 +72,10 @@ passport.use(new LocalStrategy(
 
 //	serialize user
 passport.serializeUser(function(user, done) {
-	return done(null, user);
+	return done(null, {
+    id: user.id,
+    username: user.username
+  });
 });
 
 //	deserialize user
