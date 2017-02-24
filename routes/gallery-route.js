@@ -6,9 +6,19 @@ const models = require('../models');
 const app = express();
 const router = express.Router();
 
+function isAuthenticated(req, res, next) {
+	console.log('running is authenticated');
+	if (req.isAuthenticated()) {
+		console.log('passed');
+		next();
+	}else{
+		console.log('NOPE');
+		res.redirect('/user/login');
+	}
+}
+
 //	New Photo Form
-router.route('/new')
-	.get((req, res) => {
+router.get('/new', isAuthenticated, (req, res) => {
 		models.Gallery.findAll()
 		.then(function(gallery) {
 			res.render('gallery/new');
@@ -73,8 +83,7 @@ router.route('/:id')
 	});
 });
 
-router.route('/:id/edit')
-	.get((req,res) => {
+router.get('/:id/edit', isAuthenticated, (req,res) => {
 		models.Gallery.findById(req.params.id)
 		.then(function (gallery) {
 			res.render('gallery/edit', {galleryEdit: gallery});
