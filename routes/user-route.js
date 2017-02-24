@@ -54,5 +54,10 @@ router.get('/secret', isAuthenticated, (req, res) => {
 		res.render('user/secret');
 	});
 
+router.get('/logout', function( req, res) {
+	req.logout();
+	res.redirect('login');
+});
+
 module.exports = router;
 
