@@ -21,11 +21,11 @@ function isAuthenticated(req, res, next) {
 router.get('/new', isAuthenticated, (req, res) => {
 		models.Gallery.findAll()
 		.then(function(gallery) {
-			res.render('gallery/new');
+			res.render('gallery/new', {user: req.user.username});
 		})
 		.catch( err => {
 			console.log(err);
-			res.send('Something went wrong');
+			res.render('gallery/error');
 		});
 	});
 
@@ -86,7 +86,8 @@ router.route('/:id')
 router.get('/:id/edit', isAuthenticated, (req,res) => {
 		models.Gallery.findById(req.params.id)
 		.then(function (gallery) {
-			res.render('gallery/edit', {galleryEdit: gallery});
+			res.render('gallery/edit', {galleryEdit: gallery,
+				user: req.user.username});
 		});
 	});
 
