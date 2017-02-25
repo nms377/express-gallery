@@ -1,12 +1,15 @@
 const express = require('express');
 const bp = require('body-parser');
 const app = express();
+const bcrypt = require('bcrypt');
 const handlebars = require('express-handlebars');
 const methodOverride = require('method-override');
 const hbs = handlebars.create({
 	extname: '.hbs',
 	defaultLayout: 'app'
 });
+
+const saltRounds = 10; // defaults to 10 regardless
 
 //	password middleware for User
 const	LocalStrategy = require('passport-local').Strategy;
@@ -52,22 +55,51 @@ const { User, Gallery } = db;	//	object destructuring
 app.use('/gallery', gallery );
 app.use('/user', user );
 
-const authenticate = (username, password) => {
-  return User.findOne({where: { username: username, password: password}});
-};
+// const authenticate = (username, password) => {
+//   return User.findOne({where: { username: username, password: password}});
+// };
+
+// function checkPassword() {
+//   return bcrypt.compare(plainTextPassword, passwordInDB, function(err, res) {
+//     return res;
+//   });
+// }
 
 //	authenticate password
 passport.use(new LocalStrategy(
   function (username, password, done, err) {
+  
+  User.findOne({
+    where: { 
+      username: username, 
+      }
+    }).then( user => {
+      if (user === null) {
+        console.log('user failed');
+        return done(null, false, {message: 'bad username'});
+      }else{
+        bcrypt.compare(password, user.password).then(res => {
+        if(res){
+        return done(null,user);
+      }else{
+        return done(null, false, {message: 'bad password'});
+      }
+   });
+  }
+})
+.catch((err) => {
+  return done('error', err);
+});
 
-  authenticate(username, password)
-    .then( function (username) { 
-      return done(null, username); // no error, and data = username
-     })
-    .catch( err => {
-      console.log('passport.use, authenticate', err);
-      return done(null, false);  
-  });
+
+  // authenticate(username, password)
+  //   .then( function (username) { 
+  //     return done(null, username); // no error, and data = username
+  //    })
+  //   .catch( err => {
+  //     console.log('passport.use, authenticate', err);
+  //     return done(null, false);  
+  // });
 }));
 
 //	serialize user
