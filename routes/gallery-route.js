@@ -34,7 +34,7 @@ router.route('/')
 	.get((req, res) => {
 		models.Gallery.findAll({order: 'id ASC'})
 			.then(function (gallery) {
-				res.render('gallery/index', {galleryIndex: gallery});
+				res.render('index', {galleryIndex: gallery});
 			});
 })
 	.post((req, res) => {
@@ -72,8 +72,9 @@ router.route('/:id')
 			});
 		}
 	});
-})
-.delete((req, res) => {
+});
+
+router.delete('/:id', isAuthenticated, (req, res) => {
 	models.Gallery.destroy({
 		where: {
 			id: req.params.id
