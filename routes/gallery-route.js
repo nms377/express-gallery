@@ -52,8 +52,14 @@ router.route('/')
 router.route('/:id')
 	.get((req, res) => {
 		models.Gallery.findById(req.params.id)
-		.then(function (gallery) {
-			res.render('gallery/view', {galleryView: gallery});
+		.then(function (viewImg) {
+			models.Gallery.findAll({order: 'id ASC'})
+			.then(function (images) {
+				images.splice(0,1);
+
+				res.render('gallery/view', {viewImg: viewImg,
+				images: images});
+		});
 	});
 })
 .put((req, res) => {
