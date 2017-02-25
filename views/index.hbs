@@ -17,6 +17,16 @@
 
 <div id="index">
 
+	{{#if image}}
+
+	<a href="gallery/{{id}}">
+
+	<img src=" {{ link }}" alt=" Image by {{ author }}">
+
+	</a>
+
+	{{/if}}
+
 {{#each galleryIndex}}
 
 <div class="galleryIndex">
@@ -27,10 +37,7 @@
 
 </a>
 
-	<span>
-		<p class="author">{{ author}}</p>
-		<p class="link">{{ link }} </p>
-	</span>
+		<p class="author-link">{{ author}} -- {{ link }}</p>
 
 	
 
