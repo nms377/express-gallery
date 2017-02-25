@@ -1,8 +1,10 @@
 const server = require('../server');
 const express = require('express');
 const models = require('../models');
+const bcrypt = require('bcrypt');
 // const CONFIG = require('../config/config.json');
 
+const saltRounds = 10; // defaults to 10 regardless
 
 // const	session = require('express-session');
 const passport = require('passport');
@@ -16,17 +18,32 @@ router.route('/create_user')
 		res.render('user/create_user');
 	})
 	.post((req, res) => {
-		console.log(req.body.username);
-		console.log(req.body.password);
-		console.log(req.body.favcolor);
-		models.User.create({
-			username: req.body.username,
-			password: req.body.password,
-			favcolor: req.body.favcolor
-		})
-		.then(function(user) {
-			res.redirect('login');
+		req.params.username;
+		req.params.password;
+
+		bcrypt.genSalt(saltRounds, function(err, salt) {
+			bcrypt.hash(req.body.password, salt, function(err, hash) {
+				models.User.create({
+					username: req.body.username,
+					password: hash
+					// console.log('hash', hash);
+
+				}).then( _ => {
+					res.redirect('user/login');
+				});
+			});
 		});
+		// console.log(req.body.username);
+		// console.log(req.body.password);
+		// console.log(req.body.favcolor);
+		// models.User.create({
+		// 	username: req.body.username,
+		// 	password: req.body.password,
+		// 	favcolor: req.body.favcolor
+		// })
+		// .then(function(user) {
+		// 	res.redirect('login');
+		// });
 });
 
 	// User Login
