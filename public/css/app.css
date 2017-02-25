@@ -45,41 +45,72 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
 * {
   width: 100%; }
 
 body {
-  font-family: arial, sans-serif; }
+  font-family: "Arial", sans-serif; }
 
 #index {
   border-color: orange;
-  display: inline-flex;
-  flex-flow: row wrap; }
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin-top: 10px; }
 
 .galleryIndex {
-  background-color: yellow;
+  background-color: purple;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center; }
+  justify-content: space-around;
+  align-items: center;
+  width: 350px;
+  margin-top: 5px; }
   .galleryIndex img {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
+    order: 0;
+    align-self: center;
     width: 300px;
-    height: auto;
-    padding: 25px 50px 25px 50px;
-    background-color: purple; }
+    padding-bottom: 25px;
+    background-color: yellow;
+    border-bottom: 1px solid grey; }
   .galleryIndex .author {
-    flex: 0 0 auto; }
+    flex: 0 0 auto;
+    order: 1;
+    width: 300px;
+    background-color: red; }
   .galleryIndex .link {
     flex: 0 0 auto;
+    order: 1;
+    width: 300px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden; }
+    overflow: hidden;
+    background-color: pink; }
 
 h1 {
   width: 100%;
-  background-color: pink;
   padding: 50px 0 50px 0;
-  font-family: arial, sans-serif;
+  font-family: "Arial", sans-serif;
   font-weight: bold;
   color: grey;
   text-align: center;
