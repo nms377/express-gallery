@@ -84,7 +84,7 @@ passport.use(new LocalStrategy(
       }else{
         return done(null, false, {message: 'bad password'});
       }
-   });
+    });
   }
 })
 .catch((err) => {
