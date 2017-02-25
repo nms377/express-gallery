@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/nms377/express-gallery#readme",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.16.1",
     "browser-sync": "^2.18.8",
     "connect-redis": "^3.2.0",
