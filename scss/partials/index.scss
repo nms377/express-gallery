@@ -1,0 +1,50 @@
+* {
+	width: 100%;
+}
+
+body{
+	font-family: $font;
+}
+
+#index {
+
+	border-color: orange;
+
+	display: inline-flex;
+	flex-flow: row wrap;
+
+
+}
+
+.galleryIndex {
+	background-color: yellow;
+
+	display: flex;
+	flex-flow: row wrap;
+
+	justify-content: center;	
+
+	img {
+
+		flex: 0 0 auto;
+
+		width: 300px;
+		height: auto;
+
+		padding: 25px 50px 25px 50px;
+
+		background-color: purple;
+
+	}
+
+	.author{
+		flex: 0 0 auto;
+	}
+
+	.link{
+		flex: 0 0 auto;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}

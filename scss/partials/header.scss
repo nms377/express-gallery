@@ -1,0 +1,18 @@
+h1{
+	width: 100%;
+	background-color: pink;
+	padding: 50px 0 50px 0;
+	font-family: $font;
+	font-weight: bold;
+	color: grey;
+	text-align: center;
+	font-size: 3em;
+}
+
+#p_header{
+	display: none;
+
+	@include respond-to('medium'){
+		display: inline;
+	}
+}
