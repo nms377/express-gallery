@@ -2,16 +2,21 @@
 
 {{!-- {{> user }} --}}
 
+	<form action="http://localhost:3000/gallery" method="GET" enctype="application/x-www-form-urlencoded">
+		
+		<button type="submit">Return to Gallery</button>
 
-{{#with galleryView}}
+	</form>
 
-<div class="galleryView">
+{{#with viewImg}}
+
+<div class="viewImg">
 	
 	<p>{{ author }}</p>
 
 	<p> {{ link }} </p>
 	
-	<img src="{{ link }}" height="400" width="auto" />	//put size in scss
+	<img src="{{ link }}" height="400" width="auto" />
 
 	<p>{{ description }} </p>
 
@@ -27,12 +32,18 @@
 
 	</form>
 
-	<form action="http://localhost:3000/gallery" method="GET" enctype="application/x-www-form-urlencoded">
-		
-		<button type="submit">Return to Gallery</button>
-
-	</form>
-
 </div>
 
 {{/with}}
+
+{{#each images }}
+
+	<div class="images">
+		
+		<a href="/gallery/{{id}}">
+			<img src="{{ link }}" alt="{{ description }}" height="400" width="auto">
+		</a>
+
+	</div>
+
+{{/each}}
