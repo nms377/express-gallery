@@ -4,69 +4,73 @@
 
 body{
 	font-family: $font;
+	font-size: $font-size;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	display: none;
 }
 
 #index {
-
-	border-color: orange;
-
-	// width: 100%;
-
+	// background-color: orange;
+	width: 325px;
 	display: flex;
 	flex-flow: column wrap;
+	justify-content: center;
 	align-items: center;
-
 	margin-top: 10px;
-
+	margin-bottom: 50px;
+	border-bottom: 1px solid grey;
+	padding: 0 0 20px 0;
 }
 
+	div:first-child {
+		// background-color: powderblue;
+		border-bottom: 1px solid grey;
+		width: 325px;
+
+		.galleryIndex {
+			width: 150px;
+		}
+
+		.author-link{
+			display: none;
+		}
+	}
+
 .galleryIndex {
-
-	background-color: purple;
-
+	// background-color: purple;
 	display: flex;
 	flex-flow: row wrap;
-	// display: inline-block;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	width: 350px;
-	// padding: 10px 25px;
-
+	width: 300px;
 	margin-top: 5px;
 
 	img {
+		height: 200px;
+		object-fit: scale-down;
 
+	}
 
+	a {
 		flex: 0 1 auto;
 		order: 0;
-		align-self: center;
-		width: 300px;
-		padding-bottom: 25px;
-
-		background-color: yellow;
-
-		border-bottom: 1px solid grey;
-
+		padding-bottom: 10px;
+		// background-color: yellow;
 	}
 
-	.author{
+	.author-link{
 		flex: 0 0 auto;
 		order: 1;
-		width: 300px;
 
-		// display: inline-block;
-
-		background-color: red;
-
-	}
-
-	.link{
-		flex: 0 0 auto;
-		order: 1;
-		width: 300px;
+		// background-color: red;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
-		background-color: pink;
 	}
 }

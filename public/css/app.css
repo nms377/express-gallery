@@ -68,44 +68,55 @@ table {
   width: 100%; }
 
 body {
-  font-family: "Arial", sans-serif; }
-
-#index {
-  border-color: orange;
+  font-family: "Arial", sans-serif;
+  font-size: 0.75rem;
   display: flex;
   flex-flow: column wrap;
+  justify-content: center;
+  align-items: center; }
+
+button {
+  display: none; }
+
+#index {
+  width: 325px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px; }
+  margin-top: 10px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid grey;
+  padding: 0 0 20px 0; }
+
+div:first-child {
+  border-bottom: 1px solid grey;
+  width: 325px; }
+  div:first-child .galleryIndex {
+    width: 150px; }
+  div:first-child .author-link {
+    display: none; }
 
 .galleryIndex {
-  background-color: purple;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 350px;
+  width: 300px;
   margin-top: 5px; }
   .galleryIndex img {
+    height: 200px;
+    object-fit: scale-down; }
+  .galleryIndex a {
     flex: 0 1 auto;
     order: 0;
-    align-self: center;
-    width: 300px;
-    padding-bottom: 25px;
-    background-color: yellow;
-    border-bottom: 1px solid grey; }
-  .galleryIndex .author {
+    padding-bottom: 10px; }
+  .galleryIndex .author-link {
     flex: 0 0 auto;
     order: 1;
-    width: 300px;
-    background-color: red; }
-  .galleryIndex .link {
-    flex: 0 0 auto;
-    order: 1;
-    width: 300px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
-    background-color: pink; }
+    overflow: hidden; }
 
 h1 {
   width: 100%;
