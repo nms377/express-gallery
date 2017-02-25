@@ -10,41 +10,63 @@ body{
 
 	border-color: orange;
 
-	display: inline-flex;
-	flex-flow: row wrap;
+	// width: 100%;
 
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+
+	margin-top: 10px;
 
 }
 
 .galleryIndex {
-	background-color: yellow;
+
+	background-color: purple;
 
 	display: flex;
 	flex-flow: row wrap;
+	// display: inline-block;
+	justify-content: space-around;
+	align-items: center;
+	width: 350px;
+	// padding: 10px 25px;
 
-	justify-content: center;	
+	margin-top: 5px;
 
 	img {
 
-		flex: 0 0 auto;
 
+		flex: 0 1 auto;
+		order: 0;
+		align-self: center;
 		width: 300px;
-		height: auto;
+		padding-bottom: 25px;
 
-		padding: 25px 50px 25px 50px;
+		background-color: yellow;
 
-		background-color: purple;
+		border-bottom: 1px solid grey;
 
 	}
 
 	.author{
 		flex: 0 0 auto;
+		order: 1;
+		width: 300px;
+
+		// display: inline-block;
+
+		background-color: red;
+
 	}
 
 	.link{
 		flex: 0 0 auto;
+		order: 1;
+		width: 300px;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
+		background-color: pink;
 	}
 }
