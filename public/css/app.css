@@ -1,6 +1,3 @@
-body {
-  background-color: pink; }
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -47,3 +44,49 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+* {
+  width: 100%; }
+
+body {
+  font-family: arial, sans-serif; }
+
+#index {
+  border-color: orange;
+  display: inline-flex;
+  flex-flow: row wrap; }
+
+.galleryIndex {
+  background-color: yellow;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+  .galleryIndex img {
+    flex: 0 0 auto;
+    width: 300px;
+    height: auto;
+    padding: 25px 50px 25px 50px;
+    background-color: purple; }
+  .galleryIndex .author {
+    flex: 0 0 auto; }
+  .galleryIndex .link {
+    flex: 0 0 auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+
+h1 {
+  width: 100%;
+  background-color: pink;
+  padding: 50px 0 50px 0;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+  color: grey;
+  text-align: center;
+  font-size: 3em; }
+
+#p_header {
+  display: none; }
+  @media (min-width: 800px) {
+    #p_header {
+      display: inline; } }
