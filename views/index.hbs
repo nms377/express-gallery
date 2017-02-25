@@ -1,15 +1,13 @@
-<div id="gallery_index">
-
 {{> header }}
 
 {{!-- {{> user }} --}}
 
 <form action="http://localhost:3000/user/login" method="GET" enctype="application/x-www-form-urlencoded">
-	<button id="addImg" >Login</button>
+	<button type="submit">Login</button>
 </form>
 
 <form action="http://localhost:3000/user/create_user" method="GET" enctype="application/x-www-form-urlencoded">
-	<button id="addImg" >Create an Account</button>
+	<button type="submit">Create an Account</button>
 </form>
 
 
@@ -17,19 +15,21 @@
 	<button type="submit">Return to Profile</button>
 </form>
 
+<div id="index">
+
 {{#each galleryIndex}}
 
 <div class="galleryIndex">
 	
 <a href="gallery/{{id}}">
 
-	<img src=" {{ link }}" alt=" Image by {{ author }}" height="400" width="auto">
+	<img src=" {{ link }}" alt=" Image by {{ author }}">
 
 </a>
 
-	<p>{{ author}}</p>
+	<p class="author">{{ author}}</p>
 
-	<p>{{ link }} </p>
+	<p class="link">{{ link }} </p>
 
 </div>
 
