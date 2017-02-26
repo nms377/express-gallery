@@ -1,4 +1,19 @@
+#header {
+	background-color: yellow;
+	display: flex;
+	flex-flow: row wrap;
+	border-top: 1px dotted grey;
+	height: 100%;
+
+	@include respond-to('large'){
+	margin: 5%;
+	margin-bottom: 50px;
+	}
+}
+
 h1{
+	flex: 0 0 auto;
+	order: 0;
 	width: 100%;
 	// background-color: pink;
 	padding: 50px 0 50px 0;
@@ -7,12 +22,34 @@ h1{
 	color: grey;
 	text-align: center;
 	font-size: 3em;
+	letter-spacing: 8px;
+
+	@include respond-to('large'){
+		background-color: green;
+		width: 70%;
+		align-self: center;
+		// padding: 1% 0;
+		font-size: 5rem;
+	}
 }
 
 #p_header{
+
+	flex: 0 0 auto;
+	order: 0;
 	display: none;
 
-	@include respond-to('medium'){
+	@include respond-to('large'){
 		display: inline;
+		text-align: left;
+		background-color: pink;
+		align-self: center;
+		width: 18%;
+		height: 50%;
+		padding: 0 1%;
+		border-left: 1px solid grey;
+		word-break: break-word;
+		font-size: 1rem;
+
 	}
 }
