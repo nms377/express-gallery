@@ -1,19 +1,10 @@
-* {
-	width: 100%;
-}
-
-body{
-	font-family: $font;
-	font-size: $font-size;
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: center;
-	align-items: center;
-}
-
 //	hide the login/createuser/profile buttons
-button {
+.indexBtn {
 	display: none;
+}
+
+#mobileNav {
+	
 }
 
 // 	contains all the image cards
