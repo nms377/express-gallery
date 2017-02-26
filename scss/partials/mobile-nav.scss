@@ -1,0 +1,37 @@
+//	Menu for Mobile Display
+.dropdown {
+	margin-bottom: 15px;
+	font-size: 1.25em;
+}
+
+.menu {
+	border: none;
+	background-color: powderblue;
+	font-size: 1.25em;
+}
+
+.dropdown-content {
+	display: none;
+}
+
+.dropdown-content li {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.dropdown-content a {
+	flex: 0 0 auto;
+	text-align: center;
+	text-decoration: none;
+}
+
+.dropdown-content a:active{
+	background-color: pink;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
