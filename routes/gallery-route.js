@@ -53,9 +53,14 @@ router.route('/:id')
 	.get((req, res) => {
 		models.Gallery.findById(req.params.id)
 		.then(function (viewImg) {
-			models.Gallery.findAll({order: 'id ASC'})
+			models.Gallery.findAll({ order: 'id ASC',
+				where: {
+					id: {
+						$ne: req.params.id
+					}
+				}
+			})
 			.then(function (images) {
-				images.splice(0,1);
 
 				res.render('gallery/view', {viewImg: viewImg,
 				images: images});
