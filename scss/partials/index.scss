@@ -14,6 +14,10 @@
 	align-items: center;
 	margin-bottom: 50px;
 	border-bottom: 1px solid grey;
+
+	@include respond-to('medium'){
+		width: 100%;
+	}
 }
 
 // takes first image of gallery
@@ -22,10 +26,18 @@
 	border-bottom: 1px solid grey;
 	width: 325px;
 
+	@include respond-to('medium'){
+		width: 90%;
+	}
+
 	img {
 		object-fit: cover;
 		object-position: 0 0;
 		height: 200px;
+
+		@include respond-to('medium'){
+			height: 600px;
+		}
 	}
 
 	.author-link{
