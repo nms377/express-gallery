@@ -64,10 +64,9 @@ table {
   display: block; }
 
 /* close commented backslash hack */
-.viewBtn {
-  display: none; }
-
 #viewImg {
+  display: flex;
+  flex-flow: row wrap;
   width: 300px; }
   #viewImg img {
     height: auto;
@@ -82,6 +81,14 @@ table {
     text-overflow: normal;
     white-space: wrap;
     word-break: break-all; }
+
+#editForm, #deleteForm {
+  flex: 0 0 25%;
+  order: 1;
+  margin-top: 25px; }
+
+#editForm {
+  margin-right: 25px; }
 
 .images {
   display: none; }
@@ -133,6 +140,35 @@ table {
     white-space: nowrap;
     overflow: hidden; }
 
+.dropdown {
+  margin-bottom: 15px;
+  font-size: 1.25em; }
+
+.menu {
+  border: none;
+  background-color: powderblue;
+  font-size: 1.25em; }
+
+.dropdown-content {
+  display: none; }
+
+.dropdown-content li {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center; }
+
+.dropdown-content a {
+  flex: 0 0 auto;
+  text-align: center;
+  text-decoration: none; }
+
+.dropdown-content a:active {
+  background-color: pink; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
 h1 {
   width: 100%;
   padding: 50px 0 50px 0;
@@ -159,24 +195,3 @@ body {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center; }
-
-.dropdown {
-  margin-bottom: 15px;
-  font-size: 1.25em; }
-
-.menu {
-  border: none;
-  background-color: powderblue;
-  font-size: 1.25em; }
-
-.dropdown-content {
-  display: none; }
-
-.dropdown-content a {
-  text-decoration: none; }
-
-.dropdown-content a:active {
-  background-color: pink; }
-
-.dropdown:hover .dropdown-content {
-  display: block; }

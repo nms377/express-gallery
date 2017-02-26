@@ -4,6 +4,7 @@
 @import "./partials/variables";
 @import "./partials/view";
 @import "./partials/index";
+@import "./partials/mobile-nav";
 @import "./partials/header";
 
 * {
@@ -18,33 +19,5 @@ body{
 	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
-}
-
-//	Menu for Mobile Display
-.dropdown {
-	margin-bottom: 15px;
-	font-size: 1.25em;
-}
-
-.menu {
-	border: none;
-	background-color: powderblue;
-	font-size: 1.25em;
-}
-
-.dropdown-content {
-	display: none;
-}
-
-.dropdown-content a {
-	text-decoration: none;
-}
-
-.dropdown-content a:active{
-	background-color: pink;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
 }
 

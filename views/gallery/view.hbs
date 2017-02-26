@@ -2,12 +2,6 @@
 
 {{> mobile-nav }}
 
-	<form action="http://localhost:3000/gallery" method="GET" enctype="application/x-www-form-urlencoded">
-		
-		<button class="viewBtn" type="submit">Return to Gallery</button>
-
-	</form>
-
 {{#with viewImg}}
 
 <div id="viewImg">
@@ -19,16 +13,18 @@
 	<img src="{{ link }}" height="400" width="auto" />
 
 	<p class="description">{{ description }} </p>
-
-	<form action="http://localhost:3000/gallery/{{id}}/edit" method="get" enctype="application/x-www-form-urlencoded">
 		
-		<button class="viewBtn" type="submit">Edit</button>
-
+	<form action="/gallery/{{id}}/edit" id="editForm">
+	<button id="editBtn" type="submit">Edit</button>
 	</form>
 
-	<form action="http://localhost:3000/gallery/{{id}}?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
+	{{!-- 
+		<a href="/{{id}}/edit"><button id="editBtn" type="submit">Edit</button></a>
+ --}}
+
+	<form id="deleteForm" action="http://localhost:3000/gallery/{{id}}?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
 		
-		<button class="viewBtn" type="submit">Delete</button>
+		<button id="deleteBtn" type="submit">Delete</button>
 
 	</form>
 

@@ -1,10 +1,13 @@
 .viewBtn {
 	//	will do something with button
-	display: none;
+	// display: none;
 }
 
 #viewImg {
 	// background-color: pink;
+
+	display: flex;
+	flex-flow: row wrap;
 
 	width: 300px;
 
@@ -17,6 +20,7 @@
 	}
 
 	#author, #link {
+
 		font-size: .90rem;
 		font-weight: bold;
 		line-height: 1.25rem;
@@ -28,6 +32,16 @@
 		word-break: break-all;
 		// overflow: auto;
 	}
+}
+
+#editForm, #deleteForm {
+	flex: 0 0 25%;
+	order: 1;
+	margin-top: 25px;
+}
+
+#editForm {
+	margin-right: 25px;
 }
 
 .images {
