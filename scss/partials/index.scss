@@ -9,7 +9,7 @@
 	// background-color: orange;
 	width: 325px;
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 50px;
@@ -47,6 +47,10 @@
 
 	.galleryIndex:nth-last-child(-n+3) {
 		margin-bottom: 30px;
+
+		@include respond-to('medium'){
+			margin-bottom: 15px;
+		}
 	}
 
 
@@ -61,6 +65,11 @@
 	width: 300px;
 	margin: 0 0 8px 0;
 
+	@include respond-to('medium'){
+		width: 33%;
+		margin-right: 25px;
+	}
+
 	a {
 		flex: 0 0 auto;
 		order: 0;
@@ -72,6 +81,10 @@
 			// background-color: green;
 			height: 200px;
 			object-fit: cover;
+
+			@include respond-to('medium'){
+				height: 400px;
+			}
 		}
 
 	}
