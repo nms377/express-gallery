@@ -89,6 +89,15 @@ table {
 .indexBtn {
   display: none; }
 
+.dropdown-content {
+  display: none; }
+
+.dropdown-content a:active {
+  background-color: pink; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
 #index {
   width: 325px;
   display: flex;

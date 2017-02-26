@@ -3,9 +3,19 @@
 	display: none;
 }
 
-#mobileNav {
-	
+//	Menu for Mobile Display
+.dropdown-content {
+	display: none;
 }
+
+.dropdown-content a:active {
+	background-color: pink;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
 
 // 	contains all the image cards
 #index {
