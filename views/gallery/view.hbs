@@ -4,31 +4,31 @@
 
 	<form action="http://localhost:3000/gallery" method="GET" enctype="application/x-www-form-urlencoded">
 		
-		<button type="submit">Return to Gallery</button>
+		<button class="viewBtn" type="submit">Return to Gallery</button>
 
 	</form>
 
 {{#with viewImg}}
 
-<div class="viewImg">
+<div id="viewImg">
 	
-	<p>{{ author }}</p>
+	<p id="author">{{ author }} – </p>
 
-	<p> {{ link }} </p>
+	<p id="link"> {{ link }} </p>
 	
 	<img src="{{ link }}" height="400" width="auto" />
 
-	<p>{{ description }} </p>
+	<p class="description">{{ description }} </p>
 
 	<form action="http://localhost:3000/gallery/{{id}}/edit" method="get" enctype="application/x-www-form-urlencoded">
 		
-		<button type="submit">Edit</button>
+		<button class="viewBtn" type="submit">Edit</button>
 
 	</form>
 
 	<form action="http://localhost:3000/gallery/{{id}}?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
 		
-		<button type="submit">Delete</button>
+		<button class="viewBtn" type="submit">Delete</button>
 
 	</form>
 

@@ -1,0 +1,35 @@
+.viewBtn {
+	//	will do something with button
+	display: none;
+}
+
+#viewImg {
+	// background-color: pink;
+
+	width: 300px;
+
+
+	img {
+		height: auto;
+		object-fit: contain;
+		padding-top: 15px;
+		padding-bottom: 35px;
+	}
+
+	#author, #link {
+		font-size: .90rem;
+		font-weight: bold;
+		line-height: 1.25rem;
+	}
+
+	#link {
+		text-overflow: normal;
+		white-space: wrap;
+		word-break: break-all;
+		// overflow: auto;
+	}
+}
+
+.images {
+	display: none;
+}

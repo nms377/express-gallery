@@ -2,5 +2,21 @@
 @import "./partials/_clearfix";
 @import "./mixins";
 @import "./partials/variables";
+@import "./partials/view";
 @import "./partials/index";
 @import "./partials/header";
+
+* {
+	width: 100%;
+}
+
+body{
+	font-family: $font;
+	font-size: $font-size;
+	font-color: grey;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+
