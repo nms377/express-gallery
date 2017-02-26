@@ -2,6 +2,10 @@
 .dropdown {
 	margin-bottom: 15px;
 	font-size: 1.25em;
+
+	@include respond-to('medium'){
+		display: none;
+	}
 }
 
 .menu {
