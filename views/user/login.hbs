@@ -1,21 +1,23 @@
 {{> header }}
 
-<form action="http://localhost:3000/user/login" method="POST" enctype="application/x-www-form-urlencoded">
+<div id="loginDiv">
+	<form class="login" action="http://localhost:3000/user/login" method="POST" enctype="application/x-www-form-urlencoded">
 
-	<label name="username">Username</label>
-		<input name="username" type="text" placeholder="Tell us who you are"><br>
+		<label name="username">Username</label>
+			<input class="username" name="username" type="text" placeholder="Tell us who you are"><br>
 
-	<label name="password">Password</label>
-		<input name="password" type="text" placeholder="itsasecret"><br>
+		<label name="password">Password</label>
+			<input class="password" name="password" type="text" placeholder="itsasecret"><br>
 
-	<button type="submit">Login</button>
+		<button class="loginBtn" type="submit">Login</button>
 
-</form>
+	</form>
 
-<form action="http://localhost:3000/user/create_user" method="GET" enctype="application/x-www-form-urlencoded">
-	<button type="submit">New User</button>
-</form>
+	<form class="newUser" action="http://localhost:3000/user/create_user" method="GET" enctype="application/x-www-form-urlencoded">
+		<button type="submit">New User</button>
+	</form>
 
-<form action="http://localhost:3000/gallery" method="GET" enctype="application/x-www-form-urlencoded">
-	<button type="submit">View Gallery</button>
-</form>
+	<form class="viewGallery" action="http://localhost:3000/gallery" method="GET" enctype="application/x-www-form-urlencoded">
+		<button type="submit">View Gallery</button>
+	</form>
+</div>
