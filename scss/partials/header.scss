@@ -4,9 +4,9 @@
 	flex-flow: row wrap;
 	border-top: 1px dotted grey;
 	height: 100px;
-	background-color: yellow;
+	// background-color: yellow;
 
-	@include respond-to('large'){
+	@include respond-to('medium'){
 	align-items: center;
 	width: 87.25%;
 	margin: 6% 0;
@@ -27,11 +27,11 @@ h1{
 	letter-spacing: 8px;
 	// background-color: pink;
 
-	@include respond-to('large'){
-		background-color: green;
+	@include respond-to('medium'){
+		// background-color: green;
 		width: 65%;
 		align-self: center;
-		letter-spacing: 20px;
+		letter-spacing: 28px;
 		font-size: 5rem;
 	}
 }
@@ -42,17 +42,17 @@ h1{
 	order: 0;
 	display: none;
 
-	@include respond-to('large'){
+	@include respond-to('medium'){
 		display: inline;
 		text-align: left;
-		background-color: pink;
+		// background-color: pink;
 		align-self: center;
-		width: 23%;
-		height: 65%;
+		width: 30%;
+		height: 80%;
 		padding: 0 1%;
 		border-left: 1px solid grey;
 		word-break: break-word;
-		line-height: .90rem;
+		line-height: 1.35rem;
 
 	}
 }
