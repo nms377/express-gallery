@@ -1,22 +1,28 @@
-.viewBtn {
-	//	will do something with button
-	// display: none;
-}
-
 #viewImg {
 	// background-color: pink;
-
+	order: 3;
 	display: flex;
 	flex-flow: row wrap;
+	align-self: flex-start;
 
 	width: 300px;
 
+	@include respond-to('medium'){
+		margin-top: 5%;
+		width: 60%;
+		height: 100%;
+	}
+
 
 	img {
-		height: auto;
+		height: 400px;
 		object-fit: contain;
 		padding-top: 15px;
 		padding-bottom: 35px;
+
+		@include respond-to('medium'){
+	
+		}
 	}
 
 	#author, #link {
@@ -36,14 +42,55 @@
 
 #editForm, #deleteForm {
 	flex: 0 0 25%;
-	order: 1;
+	order: 4;
 	margin-top: 25px;
+	margin-bottom: 25px;
+
+	@include respond-to('medium'){
+		flex: 0 0 10%;
+	}
 }
 
 #editForm {
 	margin-right: 25px;
+
 }
 
-.images {
+
+#images-container{
+
 	display: none;
+
+	@include respond-to('medium'){
+		display: inline-block;
+		order: 5;
+		display: flex;
+		flex-flow: column wrap;
+		width: 25%;
+		margin-left: 2%;
+		margin-top: 8.95%;
+	}	
+
+	.images {
+		flex: 0 0 25%;
+		display: none;
+
+		@include respond-to('medium'){
+			display: inline-block;
+			margin-bottom: 8%;
+
+			img {
+				height: 200px;
+			}
+		}
+	}
+
+	.author-link{
+		line-height: 1em;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		margin-top: 2%;
+		font-weight: bold;
+	}
 }
