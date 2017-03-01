@@ -21,3 +21,38 @@ body{
 	align-items: center;
 }
 
+#loginDiv {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.login {
+	flex: 1 0 auto;
+	order: 1;
+	width: 25%;
+
+	.username, .password {
+		margin-bottom: 4%;
+	}
+
+	.loginBtn {
+		margin-bottom: 5%;
+	}
+
+}
+
+.newUser {
+	flex: 0 0 auto;
+	order: 2;
+	width: 17.5%;
+	margin-bottom: .5%;
+}
+
+.viewGallery {
+	flex: 0 0 auto;
+	order: 2;
+	width: 17.5%;
+}
