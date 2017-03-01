@@ -65,11 +65,18 @@ table {
 
 /* close commented backslash hack */
 #viewImg {
+  order: 3;
   display: flex;
   flex-flow: row wrap;
+  align-self: flex-start;
   width: 300px; }
+  @media (min-width: 800px) {
+    #viewImg {
+      margin-top: 5%;
+      width: 60%;
+      height: 100%; } }
   #viewImg img {
-    height: auto;
+    height: 400px;
     object-fit: contain;
     padding-top: 15px;
     padding-bottom: 35px; }
@@ -84,14 +91,43 @@ table {
 
 #editForm, #deleteForm {
   flex: 0 0 25%;
-  order: 1;
-  margin-top: 25px; }
+  order: 4;
+  margin-top: 25px;
+  margin-bottom: 25px; }
+  @media (min-width: 800px) {
+    #editForm, #deleteForm {
+      flex: 0 0 10%; } }
 
 #editForm {
   margin-right: 25px; }
 
-.images {
+#images-container {
   display: none; }
+  @media (min-width: 800px) {
+    #images-container {
+      display: inline-block;
+      order: 5;
+      display: flex;
+      flex-flow: column wrap;
+      width: 25%;
+      margin-left: 2%;
+      margin-top: 8.95%; } }
+  #images-container .images {
+    flex: 0 0 25%;
+    display: none; }
+    @media (min-width: 800px) {
+      #images-container .images {
+        display: inline-block;
+        margin-bottom: 8%; }
+        #images-container .images img {
+          height: 200px; } }
+  #images-container .author-link {
+    line-height: 1em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 2%;
+    font-weight: bold; }
 
 .indexBtn {
   display: none; }
@@ -205,6 +241,7 @@ table {
 
 #header {
   flex: 0 0 auto;
+  order: 0;
   display: flex;
   flex-flow: row wrap;
   border-top: 1px dotted grey;
@@ -261,3 +298,30 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center; }
+
+#loginDiv {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.login {
+  flex: 1 0 auto;
+  order: 1;
+  width: 25%; }
+  .login .username, .login .password {
+    margin-bottom: 4%; }
+  .login .loginBtn {
+    margin-bottom: 5%; }
+
+.newUser {
+  flex: 0 0 auto;
+  order: 2;
+  width: 17.5%;
+  margin-bottom: .5%; }
+
+.viewGallery {
+  flex: 0 0 auto;
+  order: 2;
+  width: 17.5%; }
