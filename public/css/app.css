@@ -71,10 +71,14 @@ table {
   margin-bottom: 1%; }
   .galleryEdit img {
     flex: 0 0 auto;
+    width: 80%;
+    height: 25%;
     object-fit: cover;
-    margin-bottom: 2%;
-    width: 60%;
-    height: 25%; }
+    margin-bottom: 2%; }
+    @media (min-width: 800px) {
+      .galleryEdit img {
+        width: 60%;
+        height: 25%; } }
   .galleryEdit p {
     flex: 0 0 auto;
     width: 60%;

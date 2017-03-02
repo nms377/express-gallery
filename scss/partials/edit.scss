@@ -7,10 +7,17 @@
 
 	img {
 		flex: 0 0 auto;
+		width: 80%;
+		height: 25%;
 		object-fit: cover;
 		margin-bottom: 2%;
-		width: 60%;
-		height: 25%;
+
+		@include respond-to('medium'){
+			width: 60%;
+			height: 25%;
+	
+		}
+
 	}
 
 	p {
