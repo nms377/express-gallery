@@ -1,5 +1,71 @@
+//	Menu for Desktop Display
+
+#desktop-nav-div{
+
+	flex: 0 0 100%;
+	order: -1;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+
+	.desktop-dropdown {
+		// flex: 0 0 5%;
+		// order: -1;
+		width: 8%;
+		align-self: flex-start;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+		margin: 1% 3% 0 0;
+	}
+
+	.desktop-nav {
+		flex: 0 0 100%;
+		border: none;
+		font-size: .75rem;
+		background-color: rgb(255,255,255);
+	}
+
+	.desktop-content {
+		display: none;
+	}
+
+	.desktop-content li {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	padding: 1%;
+}
+
+
+	.desktop-content a {
+		flex: 0 0 auto;
+		text-align: center;
+		text-decoration: none;
+		padding: 1.5% 0;
+	}
+
+	.desktop-content li:hover{
+		background-color: grey;
+	}
+
+	.desktop-content a:hover{
+		color: rgb(255,255,255);
+	}
+
+	.desktop-dropdown:hover .desktop-content {
+		display: block;
+}
+
+	@media (max-width: 800px){
+		display: none;
+	}
+}
+
+
 //	Menu for Mobile Display
-.dropdown {
+.mobile-dropdown {
 	margin-bottom: 15px;
 	font-size: 1.25em;
 
@@ -8,7 +74,7 @@
 	}
 }
 
-.menu {
+.mobile-nav {
 	border: none;
 	background-color: grey;
 	font-size: 1.25em;
