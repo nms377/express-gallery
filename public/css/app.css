@@ -357,8 +357,8 @@ body {
   flex: 1 0 auto;
   order: 1;
   width: 25%; }
-  .login .username, .login .password {
-    margin-bottom: 4%; }
+  .login #username, .login #password {
+    margin: 4% 0; }
   .login .loginBtn {
     margin-bottom: 5%; }
 
@@ -367,8 +367,3 @@ body {
   order: 2;
   width: 25%;
   margin-bottom: .5%; }
-
-.viewGallery {
-  flex: 0 0 auto;
-  order: 2;
-  width: 25%; }

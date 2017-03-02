@@ -35,8 +35,8 @@ body{
 	order: 1;
 	width: 25%;
 
-	.username, .password {
-		margin-bottom: 4%;
+	#username, #password {
+		margin: 4% 0;
 	}
 
 	.loginBtn {
@@ -50,10 +50,4 @@ body{
 	order: 2;
 	width: 25%;
 	margin-bottom: .5%;
-}
-
-.viewGallery {
-	flex: 0 0 auto;
-	order: 2;
-	width: 25%;
 }
