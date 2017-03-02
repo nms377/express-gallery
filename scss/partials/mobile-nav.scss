@@ -10,8 +10,9 @@
 
 .menu {
 	border: none;
-	background-color: powderblue;
+	background-color: grey;
 	font-size: 1.25em;
+	color: rgb(255, 255, 255);
 }
 
 .dropdown-content {
@@ -29,10 +30,15 @@
 	flex: 0 0 auto;
 	text-align: center;
 	text-decoration: none;
+	padding: 1.5% 0;
 }
 
-.dropdown-content a:active{
-	background-color: pink;
+.dropdown-content li:hover{
+	background-color: grey;
+}
+
+.dropdown-content a:hover{
+	color: rgb(255,255,255);
 }
 
 .dropdown:hover .dropdown-content {
