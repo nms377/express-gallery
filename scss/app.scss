@@ -2,6 +2,7 @@
 @import "./partials/_clearfix";
 @import "./mixins";
 @import "./partials/variables";
+@import "./partials/secret";
 @import "./partials/edit";
 @import "./partials/view";
 @import "./partials/index";
@@ -41,6 +42,8 @@ body{
 
 	.loginBtn {
 		margin-bottom: 5%;
+
+		
 	}
 
 }
