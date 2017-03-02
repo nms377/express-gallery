@@ -1,0 +1,56 @@
+.galleryEdit {
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin-bottom: 1%;
+
+	img {
+		flex: 0 0 auto;
+		border: 2px solid yellow;
+		object-fit: cover;
+		margin-bottom: 2%;
+		width: 60%;
+		height: 25%;
+	}
+
+	p {
+		flex: 0 0 auto;
+		background-color: red;
+		width: 60%;
+		// margin-bottom: .25%;
+		font-size: .9rem;
+	}
+
+}
+
+#editContent {
+	
+	flex: 0 0 auto;
+	order: 1;
+	width: 60%;
+
+	label {
+		background-color: green;
+		font-weight: bold;
+	}
+
+	input {
+
+		margin: .375% 0;
+
+	}
+
+	textarea {
+		height: 50px;
+		background-color: pink;
+		resize: none;
+		margin-top: .375%;
+	}
+
+	button {
+		width: 75px;
+		margin: .5% .5% 5% 0;
+	}
+}
+

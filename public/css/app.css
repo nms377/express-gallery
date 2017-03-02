@@ -64,6 +64,42 @@ table {
   display: block; }
 
 /* close commented backslash hack */
+.galleryEdit {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 1%; }
+  .galleryEdit img {
+    flex: 0 0 auto;
+    border: 2px solid yellow;
+    object-fit: cover;
+    margin-bottom: 2%;
+    width: 60%;
+    height: 25%; }
+  .galleryEdit p {
+    flex: 0 0 auto;
+    background-color: red;
+    width: 60%;
+    font-size: .9rem; }
+
+#editContent {
+  flex: 0 0 auto;
+  order: 1;
+  width: 60%; }
+  #editContent label {
+    background-color: green;
+    font-weight: bold; }
+  #editContent input {
+    margin: .375% 0; }
+  #editContent textarea {
+    height: 50px;
+    background-color: pink;
+    resize: none;
+    margin-top: .375%; }
+  #editContent button {
+    width: 75px;
+    margin: .5% .5% 5% 0; }
+
 #viewImg {
   order: 3;
   display: flex;
@@ -76,8 +112,7 @@ table {
       width: 60%;
       height: 100%; } }
   #viewImg img {
-    height: 400px;
-    object-fit: contain;
+    object-fit: scale-down;
     padding-top: 15px;
     padding-bottom: 35px; }
   #viewImg #author, #viewImg #link {
@@ -120,7 +155,8 @@ table {
         display: inline-block;
         margin-bottom: 8%; }
         #images-container .images img {
-          height: 200px; } }
+          height: 250px;
+          object-fit: cover; } }
   #images-container .author-link {
     line-height: 1em;
     text-overflow: ellipsis;
