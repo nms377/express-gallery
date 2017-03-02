@@ -258,8 +258,9 @@ table {
 
 .menu {
   border: none;
-  background-color: powderblue;
-  font-size: 1.25em; }
+  background-color: grey;
+  font-size: 1.25em;
+  color: white; }
 
 .dropdown-content {
   display: none; }
@@ -273,10 +274,14 @@ table {
 .dropdown-content a {
   flex: 0 0 auto;
   text-align: center;
-  text-decoration: none; }
+  text-decoration: none;
+  padding: 1.5% 0; }
 
-.dropdown-content a:active {
-  background-color: pink; }
+.dropdown-content li:hover {
+  background-color: grey; }
+
+.dropdown-content a:hover {
+  color: white; }
 
 .dropdown:hover .dropdown-content {
   display: block; }
@@ -360,10 +365,10 @@ body {
 .newUser {
   flex: 0 0 auto;
   order: 2;
-  width: 17.5%;
+  width: 25%;
   margin-bottom: .5%; }
 
 .viewGallery {
   flex: 0 0 auto;
   order: 2;
-  width: 17.5%; }
+  width: 25%; }
