@@ -71,15 +71,14 @@ table {
   margin-bottom: 1%; }
   .galleryEdit img {
     flex: 0 0 auto;
-    border: 2px solid yellow;
     object-fit: cover;
     margin-bottom: 2%;
     width: 60%;
     height: 25%; }
   .galleryEdit p {
     flex: 0 0 auto;
-    background-color: red;
     width: 60%;
+    margin-bottom: .75%;
     font-size: .9rem; }
 
 #editContent {
@@ -87,13 +86,11 @@ table {
   order: 1;
   width: 60%; }
   #editContent label {
-    background-color: green;
     font-weight: bold; }
   #editContent input {
     margin: .375% 0; }
   #editContent textarea {
     height: 50px;
-    background-color: pink;
     resize: none;
     margin-top: .375%; }
   #editContent button {
@@ -112,9 +109,14 @@ table {
       width: 60%;
       height: 100%; } }
   #viewImg img {
-    object-fit: scale-down;
+    height: 400px;
+    object-fit: contain;
     padding-top: 15px;
     padding-bottom: 35px; }
+    @media (min-width: 800px) {
+      #viewImg img {
+        height: 100%;
+        object-fit: cover; } }
   #viewImg #author, #viewImg #link {
     font-size: .90rem;
     font-weight: bold;
@@ -146,7 +148,7 @@ table {
       flex-flow: column wrap;
       width: 25%;
       margin-left: 2%;
-      margin-top: 8.95%; } }
+      margin-top: 8%; } }
   #images-container .images {
     flex: 0 0 25%;
     display: none; }
@@ -155,7 +157,7 @@ table {
         display: inline-block;
         margin-bottom: 8%; }
         #images-container .images img {
-          height: 250px;
+          height: 200px;
           object-fit: cover; } }
   #images-container .author-link {
     line-height: 1em;

@@ -7,7 +7,6 @@
 
 	img {
 		flex: 0 0 auto;
-		border: 2px solid yellow;
 		object-fit: cover;
 		margin-bottom: 2%;
 		width: 60%;
@@ -16,9 +15,8 @@
 
 	p {
 		flex: 0 0 auto;
-		background-color: red;
 		width: 60%;
-		// margin-bottom: .25%;
+		margin-bottom: .75%;
 		font-size: .9rem;
 	}
 
@@ -31,7 +29,6 @@
 	width: 60%;
 
 	label {
-		background-color: green;
 		font-weight: bold;
 	}
 
@@ -43,7 +40,6 @@
 
 	textarea {
 		height: 50px;
-		background-color: pink;
 		resize: none;
 		margin-top: .375%;
 	}
