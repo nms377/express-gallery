@@ -15,13 +15,12 @@
 
 
 	img {
-		height: 400px;
-		object-fit: contain;
+		// height: auto;
+		object-fit: scale-down;
 		padding-top: 15px;
 		padding-bottom: 35px;
 
 		@include respond-to('medium'){
-	
 		}
 	}
 
@@ -80,7 +79,8 @@
 			margin-bottom: 8%;
 
 			img {
-				height: 200px;
+				height: 250px;
+				object-fit: cover;
 			}
 		}
 	}
