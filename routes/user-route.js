@@ -33,17 +33,6 @@ router.route('/create_user')
 				});
 			});
 		});
-		// console.log(req.body.username);
-		// console.log(req.body.password);
-		// console.log(req.body.favcolor);
-		// models.User.create({
-		// 	username: req.body.username,
-		// 	password: req.body.password,
-		// 	favcolor: req.body.favcolor
-		// })
-		// .then(function(user) {
-		// 	res.redirect('login');
-		// });
 });
 
 	// User Login
