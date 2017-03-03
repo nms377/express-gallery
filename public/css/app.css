@@ -64,17 +64,18 @@ table {
   display: block; }
 
 /* close commented backslash hack */
-#buttons {
-  width: 50%; }
-  #buttons button {
-    margin-bottom: 5%; }
+#addImg {
+  width: 25%; }
+  #addImg a {
+    text-decoration: none; }
   @media (min-width: 800px) {
-    #buttons {
+    #addImg {
       width: 125px; } }
 
 #greeting {
   text-align: center;
-  padding: 2%; }
+  padding: 2%;
+  font-size: 1.125rem; }
 
 .galleryEdit {
   display: flex;
@@ -345,14 +346,14 @@ table {
   order: 0;
   display: flex;
   flex-flow: row wrap;
-  border-top: 1px dotted grey;
   height: 100px; }
   @media (min-width: 800px) {
     #header {
       align-items: center;
       width: 87.25%;
       margin: 6% 0;
-      margin-bottom: 50px; } }
+      margin-bottom: 50px;
+      border-top: 1px dotted grey; } }
 
 h1 {
   flex: 0 0 auto;
