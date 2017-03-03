@@ -34,7 +34,7 @@ router.route('/')
 	.get((req, res) => {
 		models.Gallery.findAll({order: 'id ASC'})
 			.then(function (gallery) {
-				res.render('index', {galleryIndex: gallery});
+				res.render('index', {galleryIndex: gallery, user: req.user.username});
 			});
 })
 	.post((req, res) => {
@@ -63,7 +63,7 @@ router.route('/:id')
 			.then(function (images) {
 
 				res.render('gallery/view', {viewImg: viewImg,
-				images: images});
+				images: images, user: req.user.username});
 		});
 	});
 })

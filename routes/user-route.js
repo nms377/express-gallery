@@ -13,7 +13,7 @@ const passport = require('passport');
 const app = express();
 const router = express.Router();
 
-router.route('/create_user')
+router.route('/create-user')
 	.get((req, res) => {
 		res.render('user/create-user');
 	})
