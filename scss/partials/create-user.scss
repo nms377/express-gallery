@@ -1,11 +1,15 @@
 #newUser {
-	width: 30%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 250px;
 
 	#username, #password {
-		margin: 1.25% 0;
+		margin: 3% 0;
 	}
 
 	button {
-		width: 100px;
+		width: $btn-width;
+		margin-bottom: 3%;
 	}
 }

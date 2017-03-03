@@ -274,11 +274,15 @@ table {
         overflow: hidden; } }
 
 #newUser {
-  width: 30%; }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 250px; }
   #newUser #username, #newUser #password {
-    margin: 1.25% 0; }
+    margin: 3% 0; }
   #newUser button {
-    width: 100px; }
+    width: 100px;
+    margin-bottom: 3%; }
 
 #desktop-nav-div {
   flex: 0 0 100%;
@@ -428,14 +432,18 @@ body {
 .login {
   flex: 1 0 auto;
   order: 1;
-  width: 25%; }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 250px; }
   .login #username, .login #password {
-    margin: 4% 0; }
+    margin: 3% 0; }
   .login .loginBtn {
-    margin-bottom: 5%; }
+    width: 100px;
+    margin-bottom: 3%; }
 
 .newUser {
   flex: 0 0 auto;
   order: 2;
-  width: 25%;
+  width: 100px;
   margin-bottom: .5%; }

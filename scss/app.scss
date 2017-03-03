@@ -36,16 +36,18 @@ body{
 .login {
 	flex: 1 0 auto;
 	order: 1;
-	width: 25%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 250px;
 
 	#username, #password {
-		margin: 4% 0;
+		margin: 3% 0;
 	}
 
 	.loginBtn {
-		margin-bottom: 5%;
-
-		
+		width: $btn-width;
+		margin-bottom: 3%;
 	}
 
 }
@@ -53,6 +55,6 @@ body{
 .newUser {
 	flex: 0 0 auto;
 	order: 2;
-	width: 25%;
+	width: $btn-width;
 	margin-bottom: .5%;
 }
