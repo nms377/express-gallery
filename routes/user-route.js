@@ -48,7 +48,7 @@ router.route('/create_user')
 
 	// User Login
 router.route('/login')
-	.get((req, res) => {
+	.get( (req, res) => {
 		res.render('user/login');
 })
 	.post(passport.authenticate('local', {
