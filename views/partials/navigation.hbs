@@ -3,11 +3,14 @@
 	<div class="desktop-dropdown">
 		<button class="desktop-nav">Menu</button>
 			<ul class="desktop-content">
+			{{#if user }}
+				<li><a href="/user/logout">Log Out</a></li>
+			{{else}}
 				<li><a href="/user/login">Login</a></li>
 				<li><a href="/user/create_user">Create Account</a></li>
+			{{/if}}
 				<li><a href="/user/secret">Profile</a></li>
 				<li><a href="/gallery">Gallery</a></li>
-				<li><a href="/user/logout">Log Out</a></li>
 		</ul>
 	</div>
 </div>
@@ -16,10 +19,14 @@
 <div id="mobile-dropdown">
 	<button id="mobile-nav">Menu</button>
 		<ul id="mobile-content">
-			<li><a href="/user/login">Login</a></li>
-			<li><a href="/user/create_user">Create Account</a></li>
-			<li><a href="/user/secret">Profile</a></li>
+			{{#if user }}
+				<li><a href="/user/logout">Log Out</a></li>
+				<li><a href="/user/secret">Profile</a></li>
+
+			{{else}}
+				<li><a href="/user/login">Login</a></li>
+				<li><a href="/user/create_user">Create Account</a></li>
+			{{/if}}
 			<li><a href="/gallery">Gallery</a></li>
-			<li><a href="/user/logout">Log Out</a></li>
 	</ul>
 </div>
