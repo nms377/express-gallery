@@ -302,41 +302,41 @@ table {
     #desktop-nav-div {
       display: none; } }
 
-.mobile-dropdown {
+#mobile-dropdown {
   margin-bottom: 15px;
   font-size: 1.25em; }
   @media (min-width: 800px) {
-    .mobile-dropdown {
+    #mobile-dropdown {
       display: none; } }
 
-.mobile-nav {
+#mobile-nav {
   border: none;
   background-color: grey;
   font-size: 1.25em;
   color: white; }
 
-.dropdown-content {
+#mobile-content {
   display: none; }
 
-.dropdown-content li {
+#mobile-content li {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center; }
 
-.dropdown-content a {
+#mobile-content li:hover {
+  background-color: grey; }
+
+#mobile-content a {
   flex: 0 0 auto;
   text-align: center;
   text-decoration: none;
   padding: 1.5% 0; }
 
-.dropdown-content li:hover {
-  background-color: grey; }
-
-.dropdown-content a:hover {
+#mobile-content a:hover {
   color: white; }
 
-.dropdown:hover .dropdown-content {
+#mobile-dropdown:hover #mobile-content {
   display: block; }
 
 #header {
