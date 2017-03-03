@@ -15,7 +15,7 @@ const router = express.Router();
 
 router.route('/create_user')
 	.get((req, res) => {
-		res.render('user/create_user');
+		res.render('user/create-user');
 	})
 	.post((req, res) => {
 		req.params.username;

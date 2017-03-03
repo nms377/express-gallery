@@ -273,6 +273,13 @@ table {
         white-space: nowrap;
         overflow: hidden; } }
 
+#newUser {
+  width: 30%; }
+  #newUser #username, #newUser #password {
+    margin: 1.25% 0; }
+  #newUser button {
+    width: 100px; }
+
 #desktop-nav-div {
   flex: 0 0 100%;
   order: -1;
