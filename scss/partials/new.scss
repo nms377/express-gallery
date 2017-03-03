@@ -1,0 +1,17 @@
+#newImg {
+	width: 60%;
+
+	#link, #author, #description {
+		margin: 1% 0;
+	}
+	
+	#description {
+		resize: none;
+		height: 50px;
+	}
+
+	button {
+		width: 50px;
+	}
+}
+

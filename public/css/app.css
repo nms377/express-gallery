@@ -184,6 +184,16 @@ table {
     margin-top: 2%;
     font-weight: bold; }
 
+#newImg {
+  width: 60%; }
+  #newImg #link, #newImg #author, #newImg #description {
+    margin: 1% 0; }
+  #newImg #description {
+    resize: none;
+    height: 50px; }
+  #newImg button {
+    width: 50px; }
+
 .indexBtn {
   display: none; }
 
